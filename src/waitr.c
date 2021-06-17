@@ -63,7 +63,7 @@ SEXP waitr_until(SEXP time_millis) {
 SEXP waitr_reset() {
   t0_micro = waitr_now_micro_();
   t0_micro_unset = 0;
-  return R_NilValue;
+  return waitr_timestamp();
 }
 
 SEXP waitr_timestamp() {
