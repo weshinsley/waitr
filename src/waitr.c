@@ -67,5 +67,6 @@ SEXP waitr_reset() {
 }
 
 SEXP waitr_timestamp() {
-  return ScalarInteger((int) ((waitr_now_micro_() - t0_micro) / 1000));
+  if (t0_micro_unset == 1) return waitr_reset();
+  else return ScalarInteger((int) ((waitr_now_micro_() - t0_micro) / 1000));
 }
