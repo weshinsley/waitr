@@ -3,10 +3,11 @@
 uint64_t t0_micro = 0;
 int t0_micro_unset = 1;
 
-void check_init() {
- if (t0_micro_unset == 1) {
+uint64_t check_init() {
+  if (t0_micro_unset == 1) {
     waitr_reset();
   }
+  return 0;
 }
 
 /***********************************************/
@@ -68,6 +69,9 @@ SEXP waitr_reset() {
 }
 
 SEXP waitr_timestamp() {
-  if (t0_micro_unset == 1) return waitr_reset();
-  else return ScalarInteger((int) ((waitr_now_micro_() - t0_micro) / 1000));
+  if (t0_micro_unset == 1) {
+    return check_init();
+  } else {
+    return ScalarInteger((int) ((waitr_now_micro_() - t0_micro) / 1000));
+  }
 }
