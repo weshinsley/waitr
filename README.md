@@ -17,7 +17,9 @@ Sys.sleep entirely showed the computer well able to exceed the framerate I
 wanted if left in freefall.
 
 <!-- badges: start -->
+  [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
   [![R-CMD-check](https://github.com/weshinsley/waitr/workflows/R-CMD-check/badge.svg)](https://github.com/weshinsley/waitr/actions)
+  [![codecov.io](https://codecov.io/github/weshinsley/waitr/coverage.svg?branch=v1)](https://codecov.io/github/weshinsley/waitr?branch=v1)
 <!-- badges: end -->
   
 ## Installation
