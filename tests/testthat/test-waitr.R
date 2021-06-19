@@ -14,14 +14,17 @@ test_that("Delay works", {
   t <- waitr::waitr_reset()
   t <- waitr::waitr_delay(500)
   expect_true(t>=500 & t<=600)
-  t <- system.time(waitr::waitr_delay(500))
-  expect_true(t[['elapsed']] >= 0.4 & t[['elapsed']] <= 0.6)
+})
+
+test_that("Real time approx", {
+  t <- system.time(waitr::waitr_delay(2000))
+  expect_true(t[['elapsed']] >= 1.9 & t[['elapsed']] <= 2.3)
 })
 
 test_that("Until works", {
   t <- waitr::waitr_reset()
-  t <- waitr::waitr_until(1000)
-  expect_true(t >= 1000 & t <= 1100)
-  t <- waitr::waitr_until(200)
-  expect_true(t >= 1000 & t <= 1150)
+  t <- waitr::waitr_until(2000)
+  expect_true(t >= 2000 & t <= 2100)
+  t <- waitr::waitr_until(1500)
+  expect_true(t >= 2000 & t <= 2150)
 })
