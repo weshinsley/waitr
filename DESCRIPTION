@@ -13,3 +13,5 @@ URL: https://github.com/weshinsley/waitr
 BugReports: https://github.com/weshinsley/waitr
 RoxygenNote: 7.1.1
 Encoding: UTF-8
+Suggests:
+    testthat
