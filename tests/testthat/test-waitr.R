@@ -20,8 +20,8 @@ test_that("Delay works", {
 
 test_that("Until works", {
   t <- waitr::waitr_reset()
-  t <- waitr::waitr_until(500)
-  expect_true(t >= 500 & t <= 550)
+  t <- waitr::waitr_until(1000)
+  expect_true(t >= 1000 & t <= 1100)
   t <- waitr::waitr_until(200)
-  expect_true(t >= 500 & t <= 550)
+  expect_true(t >= 1000 & t <= 1150)
 })
