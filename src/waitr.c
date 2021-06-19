@@ -3,16 +3,19 @@
 uint64_t t0_micro = 0;
 int t0_micro_unset = 1;
 
+void check_init() {
+ if (t0_micro_unset == 1) {
+    waitr_reset();
+  }
+}
+
 /***********************************************/
 // Wait for a specified number of milliseconds //
 /***********************************************/
 
 int waitr_delay_(int millis) {
-
-  if (t0_micro_unset == 1) {
-    waitr_reset();
-  }
-
+  check_init();
+ 
   if (millis > 0) {
     #ifdef _WIN32
       Sleep(millis);
@@ -29,9 +32,7 @@ int waitr_delay_(int millis) {
 
 int waitr_until_(int deadline_millis) {
 
-  if (t0_micro_unset == 1) {
-    waitr_reset();
-  }
+  check_init();
 
   int now_millis = ((waitr_now_micro_() - t0_micro) / 1000);
   waitr_delay_(deadline_millis - now_millis);
