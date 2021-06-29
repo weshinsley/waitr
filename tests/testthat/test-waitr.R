@@ -12,19 +12,19 @@ test_that("Reset works", {
 
 test_that("Delay works", {
   t <- waitr::waitr_reset()
-  t <- waitr::waitr_delay(500)
+  t <- waitr::wait_for(500)
   expect_true(t>=500 & t<=600)
 })
 
 test_that("Real time approx", {
-  t <- system.time(waitr::waitr_delay(2000))
+  t <- system.time(waitr::wait_for(2000))
   expect_true(t[['elapsed']] >= 1.9 & t[['elapsed']] <= 2.3)
 })
 
 test_that("Until works", {
   t <- waitr::waitr_reset()
-  t <- waitr::waitr_until(2000)
+  t <- waitr::wait_until(2000)
   expect_true(t >= 2000 & t <= 2100)
-  t <- waitr::waitr_until(1500)
+  t <- waitr::wait_until(1500)
   expect_true(t >= 2000 & t <= 2150)
 })
