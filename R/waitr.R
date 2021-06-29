@@ -14,7 +14,7 @@
 ##' @return The time in milliseconds, relative to the last reset.
 ##' @useDynLib waitr, .registration = TRUE, .fixes = "C_"
 ##' @export
-waitr_delay <- function(delay_ms) {
+wait_for <- function(delay_ms) {
   .Call(C_waitr_delay, as.integer(delay_ms))
 }
 
@@ -23,7 +23,7 @@ waitr_delay <- function(delay_ms) {
 ##' @rdname waitr
 ##' @useDynLib waitr, .registration = TRUE, .fixes = "C_"
 ##' @export
-waitr_until <- function(time_ms) {
+wait_until <- function(time_ms) {
   .Call(C_waitr_until, as.integer(time_ms))
 }
 
