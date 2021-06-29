@@ -24,7 +24,7 @@ test_that("Real time approx", {
 test_that("Until works", {
   t <- waitr::waitr_reset()
   t <- waitr::wait_until(2000)
-  expect_true(t >= 2000 & t <= 2100)
+  expect_true(t >= 2000 & t <= 2500)
   t <- waitr::wait_until(1500)
-  expect_true(t >= 2000 & t <= 2150)
+  expect_true(t >= 2000 & t <= 2500)
 })

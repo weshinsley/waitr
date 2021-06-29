@@ -51,8 +51,8 @@ delay if that time has already elapsed.
 ```r
 x <- function() {
   t <- waitr::waitr_reset()
-  t1 <- system.time(waitr::waitr_until(1000))[['elapsed']]
-  t2 <- system.time(waitr::waitr_until(500))[['elapsed']]
+  t1 <- system.time(waitr::wait_until(1000))[['elapsed']]
+  t2 <- system.time(waitr::wait_until(500))[['elapsed']]
   c(t1, t2)
 }
 
@@ -70,7 +70,7 @@ something in the form:-
   next_frame <- waitr::waitr_timestamp() + 10
   while (TRUE) {
     # Do the work for the frame
-    next_frame <- waitr::waitr_until(next_frame + 10)
+    next_frame <- waitr::wait_until(next_frame + 10)
   }
 ```
 
