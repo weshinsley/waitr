@@ -1,0 +1,6 @@
+^tags$
+^waitr.Rproj$
+^.travis.yml$
+^appveyor.yml$
+^.*\.Rproj$
+^\.Rproj\.user$

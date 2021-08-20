@@ -1,0 +1,17 @@
+Package: waitr
+Title: Slightly More Precise Delays for Animations
+Version: 1.0
+Author: Wes Hinsley [aut, cre]
+Maintainer: Wes Hinsley <wes.hinsley@gmail.com>
+Description: Wait for (delay), or wait until (time).
+    Intended as a more precise version of Sys.sleep(),
+    which seems to have a slight overheard, such that Sys.sleep(0.01)
+    behaves about the same as Sys.sleep(0.02), but removing
+    the Sys.sleep altogether makes much more of a difference.
+License: MIT + file LICENSE
+URL: https://github.com/weshinsley/waitr
+BugReports: https://github.com/weshinsley/waitr
+RoxygenNote: 7.1.1
+Encoding: UTF-8
+Suggests:
+    testthat
